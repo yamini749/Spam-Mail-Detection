@@ -21,18 +21,7 @@ This is a web-based email classifier that detects **Spam**, **Ham (Genuine)**, a
 
 ## 📂 Project Structure
 
-.
-├── app.py # Main Flask app
-├── gmail_fetcher.py # Gmail API integration
-├── model_training.ipynb # Model training script (Spam + Phishing)
-├── modelspam.joblib # Trained ML model
-├── tfidfvectorizer.joblib # TF-IDF Vectorizer
-├── templates/
-│ └── index.html # Main web page (UI)
-├── static/
-│ └── style.css # Custom styling
-├── credentials.json # Gmail API credentials
-└── token.json # OAuth2 token
+<pre><code>```bash . ├── app.py # Main Flask app ├── gmail_fetcher.py # Gmail API integration ├── model_training.ipynb # Model training notebook ├── modelspam.joblib # Trained ML model ├── tfidfvectorizer.joblib # TF-IDF vectorizer ├── credentials.json # Gmail OAuth2 credentials ├── credentials.json # Generated user token (on first login) ├── requirements.txt # Python dependencies ├── templates/ │ └── index.html # Web interface ├── static/ │ └── style.css # Styling ``` </code></pre>
 
 
 ## 🔐 Gmail API Setup
