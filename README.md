@@ -1,103 +1,89 @@
-# 📧 Spam, Ham & Phishing Email Classifier using Machine Learning (Flask + Gmail API)
+# ✉️ Spam Mail Detection
 
-A web-based email classification tool that identifies **Spam**, **Ham (Genuine)**, and **Phishing** emails using a Machine Learning model. It also offers real-time **Gmail inbox integration** and **explainable AI** through **LIME** to visualize why a particular prediction was made.
+A simple machine learning web app that classifies emails as **Spam** or **Not Spam (Ham)** using **Logistic Regression**.
+
+🔗 **Live Website**: [https://spam-mail-detection-y59j.onrender.com/](https://spam-mail-detection-y59j.onrender.com/)
 
 ---
 
 ## 🚀 Features
 
-- ✅ **Classifies emails** into: Spam / Ham / Phishing  
-- 📬 **Gmail API Integration**: Fetch and classify your real inbox emails  
-- 🧠 **Explainability with LIME**: Understand why a prediction was made  
-- 🖼️ **HTML Email Parsing**: Cleanly extracts content from formatted emails using BeautifulSoup  
+- Paste any email content and classify instantly
+- Outputs clear prediction: `Spam` or `Not Spam`
+- Simple, fast, and beginner-friendly Flask interface
+- Fully deployed and accessible via the Render web link
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Backend**: Flask (Python)  
-- **Frontend**: AngularJS, HTML, CSS  
-- **Machine Learning**: scikit-learn (Logistic Regression Model)  
-- **Explainability**: LIME  
-- **Email Parsing**: BeautifulSoup  
-- **Gmail Integration**: Gmail API (OAuth2)
+- Python 3
+- Flask (for web app)
+- Scikit-learn (Logistic Regression model)
+- Pandas & NumPy
+- Joblib (for saving/loading model)
 
 ---
 
-## 🔐 Gmail API Setup
-
-To enable Gmail access via the API:
-
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project (or use an existing one)
-3. Enable the **Gmail API**
-4. Create **OAuth 2.0 Credentials**
-5. Download the `credentials.json` file
-6. Place `credentials.json` in the project root directory
-7. On the first run, a browser will open asking for Gmail access
-
-> ⚠️ Ensure that `redirect_uri` in your Google Cloud Console matches the local Flask redirect (usually `http://localhost:5000/` or as per your app setup).
-
----
-
-## 📦 Installation & Running the App
-
-### 🔧 Prerequisites
-
-- Python 3.7+
-- pip (Python package manager)
-
-### 🚀 Steps to Run
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/yamini749/spam-email-phishing-detector.git
-cd spam-email-phishing-detector
-
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. Run the Flask app
-python app.py
-```
-
-> The app will be live at: [http://localhost:3000](http://localhost:3000)
-
----
-
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```
-spam-email-phishing-detector/
-├── static/               # Frontend assets (HTML, CSS, JS)
-├── templates/            # Jinja2 templates
-├── credentials.json      # Gmail API credentials (secure this file)
-├── app.py                # Main Flask application
-├── model.pkl             # Trained ML model
-├── vectorizer.pkl        # Fitted TF-IDF vectorizer
-├── lime_explainer.pkl    # (Optional) Pickled LIME explainer
-└── requirements.txt      # Python dependencies
+📦 Spam-Mail-Detection/
+├── app.py                  # Flask application
+├── modelspam.joblib        # Trained spam detection model
+├── templates/
+│   └── index.html          # Frontend HTML template
+├── static/                 # Optional: CSS or JS files
+├── requirements.txt        # Project dependencies
+└── README.md               # You're reading it now
 ```
 
 ---
 
-## 🧠 Model Training (Optional)
+## 📊 Model Details
 
-If you want to retrain or improve the model:
-
-- Update or extend your dataset
-- Use `scikit-learn` to retrain the logistic regression model
-- Save the new model as `model.pkl`
-- Update `vectorizer.pkl` if using a new TF-IDF configuration
+- **Model**: Logistic Regression from Scikit-learn
+- **Preprocessing**: Cleaned text + TF-IDF vectorization
+- **Training Data**: Dataset of labeled emails (spam / ham)
+- Model is saved using `joblib` and loaded in `app.py` during runtime
 
 ---
+
+## ▶️ Getting Started Locally
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yamini749/Spam-Mail-Detection.git
+   cd Spam-Mail-Detection
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the Flask app**
+   ```bash
+   python app.py
+   ```
+
+4. **Visit in browser**
+   ```
+   http://127.0.0.1:5000/
+   ```
+
+---
+
+## 🌐 Live Deployment
+
+This project is hosted on **Render**:
+
+🔗 [https://spam-mail-detection-y59j.onrender.com/](https://spam-mail-detection-y59j.onrender.com/)
+
+---
+
 
 ## 🙋‍♀️ Author
 
-**Yamini Settipalli**
-
-- GitHub: [@yamini749](https://github.com/yamini749)
-  
----
-
-⭐ If you found this useful, please consider giving a star to the repository!
+**Yamini Settipalli**  
+💼 GitHub: [@yamini749](https://github.com/yamini749)
